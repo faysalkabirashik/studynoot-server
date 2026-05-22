@@ -51,7 +51,7 @@ const getCookieOptions = () => ({
   sameSite: process.env.COOKIE_SAMESITE || "lax",
   maxAge: 7 * 24 * 60 * 60 * 1000,
 });
-
+// implemeted jwt token creation, auth 
 const createToken = (userId) => {
   return jwt.sign({ userId }, jwtSecret, { expiresIn: "7d" });
 };
