@@ -48,7 +48,9 @@ app.use(cookieParser());
 const getCookieOptions = () => ({
   httpOnly: true,
   secure: process.env.NODE_ENV === "production",
-  sameSite: process.env.COOKIE_SAMESITE || "lax",
+  sameSite:
+    process.env.COOKIE_SAMESITE ||
+    (process.env.NODE_ENV === "production" ? "none" : "lax"),
   maxAge: 7 * 24 * 60 * 60 * 1000,
 });
 // implemeted jwt token creation, auth 
