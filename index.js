@@ -20,6 +20,7 @@ let db;
 let usersCollection;
 let roomsCollection;
 let bookingsCollection;
+// db.collection('users').createIndex({ email: 1 }, { unique: true });
 
 const corsOptions = {
   origin(origin, callback) {
